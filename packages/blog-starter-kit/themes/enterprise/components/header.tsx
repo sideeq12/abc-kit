@@ -44,13 +44,13 @@ export function Header() {
 		color="transparent"
 		className="absolute z-50 border-0 bg-white text-black w-screen"
 	  >
-		<div className="container ml-6 md:sml-14 flex items-center justify-between">
-		  {/* <Image
+		{/* <div className="container ml-6 md:sml-14 flex items-center justify-between">
+		  <Image
 			src="https://github.com/adminadbc/abcwebsite/blob/main/public/logoabc.png?raw=true"
 			width={250}
 			height={80}
 			alt="ABC Foundation Logo"
-		  /> */}
+		  />
 		  <div className="ml-auto hidden items-center gap-14 lg:flex text-2xl">
 			{links.map((link) => ( (link.name == "Resources" ) ?
 			//  <Custom   key={30}/> 
@@ -87,7 +87,7 @@ export function Header() {
 			  <Bars3Icon strokeWidth={2} className="h-6 w-6 text-black" />
 			)}
 		  </IconButton>
-		</div>
+		</div> */}
 		<Collapse open={open}>
 		  <div className="container mx-auto mt-4 rounded-lg bg-white px-6 py-5">
 			<ul className="flex flex-col gap-4 text-gray-900 text-lg">
