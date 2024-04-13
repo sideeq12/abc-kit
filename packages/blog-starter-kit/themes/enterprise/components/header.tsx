@@ -46,7 +46,7 @@ export function Header() {
 	  >
 		<div className="container ml-6 md:sml-14 flex items-center justify-between">
 		  <Image
-			src="/logoabc.png"
+			src="https://github.com/adminadbc/abcwebsite/blob/main/public/logoabc.png?raw=true"
 			width={250}
 			height={80}
 			alt="ABC Foundation Logo"

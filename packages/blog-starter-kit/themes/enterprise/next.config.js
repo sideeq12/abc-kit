@@ -70,6 +70,10 @@ const config = {
 				protocol: 'https',
 				hostname: 'cdn.hashnode.com',
 			},
+			{
+                protocol: 'https',
+                hostname: 'github.com',
+            },
 		],
 	},
 	async rewrites() {
