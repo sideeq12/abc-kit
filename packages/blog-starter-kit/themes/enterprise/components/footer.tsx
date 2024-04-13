@@ -3,6 +3,28 @@ import { Container } from './container';
 import { useAppContext } from './contexts/appContext';
 import { SocialLinks } from './social-links';
 
+
+const links = [
+	{
+	  title: "Product",
+	  items: [{name :"Changemakers", url : "/Changemakers"},
+	   {  name : "Legal Connect", url : "/legalConnect"}, 
+	  { name : "Donations" , url : "/Donnation"}],
+	},
+	{
+	  title: "Resources",
+	  items: [{ name :"Articles", url: "https://abc-blog-kit.vercel.app/"}, { name :"Education", url : "/education"}],
+	},
+	{
+	  title: "Legal",
+	  items: [{ name :"Terms", url : "/terms"},{ name : "Privacy", url: "/privacy"},{name :"Confidentiality", url : "/confidentiality"}],
+	},
+	{
+	  title: "Pages",
+	  items: [{ name :"Home", url : "/"}, {name :"About", url : "/about"}, { name :"Contact Us", url : "/ContactUs"}],
+	},
+  ];
+
 export const Footer = () => {
 	const { publication } = useAppContext();
 	const PUBLICATION_LOGO = publication.preferences.logo;
@@ -24,112 +46,23 @@ export const Footer = () => {
 						{publication.title}
 					</p>
 				)}
-				<div className="flex px-20">
+				<div className="flex px-20 border-b border-black pb-6 md:pb-12">
 					<div className="flex ml-auto flex-wrap gap-6 md:gap-12">
-						<div className="col-span-full md:col-span-2 lg:col-span-1">
-							<p className="mb-2 font-semibold text-black">
-								Product
+						{links.map((link, index )=><div className="col-span-full md:col-span-2 lg:col-span-1" key={index}>
+							<p className="mb-2 font-semibold text-black text-xl">
+								{link.title}
 							</p>
-							<ul className="flex flex-col gap-2 text-slate-700 dark:text-neutral-300">
-								<li>
-									<a href="#" className="hover:underline">
-										Who We Are.
+							<ul className="flex flex-col gap-4 text-sm">
+								{link.items.map((itm, idx)=><li>
+									<a href={itm.url} key={idx} className="hover:underline">
+										{itm.name}
 									</a>
-								</li>
-								<li>
-									<a href="#" className="hover:underline">
-										What We Do.
-									</a>
-								</li>
-								<li>
-									<a href="#" className="hover:underline">
-									How It Works
-									</a>
-								</li>
-								<li>
-									<a href="#" className="hover:underline">
-										Donate.
-									</a>
-								</li>
+								</li>)}
 							</ul>
-						</div>
-						<div className="col-span-full md:col-span-2 lg:col-span-1">
-							<p className="mb-2 font-semibold text-black">Resources</p>
-							<ul className="flex flex-col gap-2 text-slate-700 dark:text-neutral-300">
-								<li>
-									<a href="#" className="hover:underline">
-										Community
-									</a>
-								</li>
-								<li>
-									<a href="#" className="hover:underline">
-										Use Cases
-									</a>
-								</li>
-								<li>
-									<a href="#" className="hover:underline">
-										Source Code
-									</a>
-								</li>
-								<li>
-									<a href="#" className="hover:underline">
-										Blog
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div className="col-span-full md:col-span-2 lg:col-span-1">
-							<p className="mb-2 font-semibold text-black">Legal</p>
-							<ul className="flex flex-col gap-2 text-slate-700 dark:text-neutral-300">
-								<li>
-									<a href="#" className="hover:underline">
-										Pricing
-									</a>
-								</li>
-								<li>
-									<a href="#" className="hover:underline">
-										Documentation
-									</a>
-								</li>
-								<li>
-									<a href="#" className="hover:underline">
-										Integrations
-									</a>
-								</li>
-								<li>
-									<a href="#" className="hover:underline">
-										Support
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div className="col-span-1">
-							<p className="mb-2 font-semibold text-black">Pages</p>
-							<ul className="flex flex-col gap-2 text-slate-700 dark:text-neutral-300">
-								<li>
-									<a href="#" className="hover:underline">
-										Events
-									</a>
-								</li>
-								<li>
-									<a href="#" className="hover:underline">
-										Careers
-									</a>
-								</li>
-								<li>
-									<a href="#" className="hover:underline">
-										Newsroom
-									</a>
-								</li>
-								<li>
-									<a href="#" className="hover:underline">
-										About us
-									</a>
-								</li>
-							</ul>
-						</div>
+						</div>)}
 					</div>
 				</div>
+				<div className='mt-6 md:mt-12  mx-auto flex justify-between'>All rights reserved.  <div>Copyright @ 2024 ABC Foundation</div></div>
 			</Container>
 		</footer>
 	);
