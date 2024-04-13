@@ -49,7 +49,7 @@ export const Footer = () => {
 						{publication.title}
 					</p>
 				)}
-				<div className="flex px-20 border-b border-black pb-6 md:pb-12">
+				<div className="flex flex-col md:flex-row px-4 md:px-20 border-b border-black pb-6 md:pb-12">
 					<div className='flex gap-3'>
 						<FaSquareInstagram size={30} />
 						<FaSquareFacebook size={30} />

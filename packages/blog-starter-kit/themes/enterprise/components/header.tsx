@@ -158,7 +158,7 @@ interface DropMenuProps {
 		</div>
   
 		<div
-		  className={`absolute z-10 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 ${
+		  className={`absolute z-10  w-56 rounded-md  mt-8 md:mt-12 shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 ${
 			isOpen ? '' : 'hidden'
 		  }`}
 		  role="menu"
