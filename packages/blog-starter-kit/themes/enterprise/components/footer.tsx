@@ -53,8 +53,8 @@ export const Footer = () => {
 								{link.title}
 							</p>
 							<ul className="flex flex-col gap-4 text-sm">
-								{link.items.map((itm, idx)=><li>
-									<a href={itm.url} key={idx} className="hover:underline">
+								{link.items.map((itm, idx)=><li   key={idx}>
+									<a href={itm.url} className="hover:underline">
 										{itm.name}
 									</a>
 								</li>)}
