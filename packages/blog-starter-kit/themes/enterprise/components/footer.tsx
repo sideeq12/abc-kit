@@ -34,7 +34,7 @@ export const Footer = () => {
 	const PUBLICATION_LOGO = publication.preferences.logo;
 	return (
 		<footer className="border-t py-20 bg-[#D3BE61] ">
-			<Container className="px-5">
+			<Container className="px-10">
 				<div className="flex flex-col md:flex-row px-4 md:px-20 border-b border-black pb-6 md:pb-12">
 			<div>
 			<Image
@@ -43,7 +43,7 @@ export const Footer = () => {
 			height={80}
 			alt="ABC Foundation Logo"
 		  />
-					<div className='flex gap-3 mt-4 md:mt-8'>
+					<div className='flex gap-3 my-8'>
 						<FaSquareInstagram size={30} />
 						<FaSquareFacebook size={30} />
 						<FaLinkedin size={30} />
@@ -51,7 +51,7 @@ export const Footer = () => {
 						<RiTiktokLine size={30}/>
 					</div>
 			</div>
-					<div className="flex ml-auto flex-wrap gap-6 md:gap-12">
+					<div className="flex ml-auto flex-wrap gap-12 md:gap-12">
 						{links.map((link, index )=><div className="col-span-full md:col-span-2 lg:col-span-1" key={index}>
 							<p className="mb-2 font-semibold text-black text-xl">
 								{link.title}
