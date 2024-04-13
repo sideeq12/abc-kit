@@ -24,38 +24,38 @@ export const Footer = () => {
 						{publication.title}
 					</p>
 				)}
-				<div className="grid w-full grid-cols-3 gap-5 md:grid-cols-6 lg:grid-cols-5">
-					<div className="col-span-1 grid grid-cols-4 gap-5 md:col-span-4 lg:col-span-3">
+				<div className="flex px-20">
+					<div className="flex ml-auto flex-wrap gap-6 md:gap-12">
 						<div className="col-span-full md:col-span-2 lg:col-span-1">
-							<p className="mb-2 font-semibold text-slate-600 dark:text-neutral-200">
+							<p className="mb-2 font-semibold text-black">
 								Product
 							</p>
-							<ul className="flex flex-col gap-1 text-slate-700 dark:text-neutral-300">
+							<ul className="flex flex-col gap-2 text-slate-700 dark:text-neutral-300">
 								<li>
 									<a href="#" className="hover:underline">
-										Contact us
+										Who We Are.
 									</a>
 								</li>
 								<li>
 									<a href="#" className="hover:underline">
-										Book a demo
+										What We Do.
 									</a>
 								</li>
 								<li>
 									<a href="#" className="hover:underline">
-										Newsletter
+									How It Works
 									</a>
 								</li>
 								<li>
 									<a href="#" className="hover:underline">
-										Slack
+										Donate.
 									</a>
 								</li>
 							</ul>
 						</div>
 						<div className="col-span-full md:col-span-2 lg:col-span-1">
-							<p className="mb-2 font-semibold text-slate-600 dark:text-neutral-200">Resources</p>
-							<ul className="flex flex-col gap-1 text-slate-700 dark:text-neutral-300">
+							<p className="mb-2 font-semibold text-black">Resources</p>
+							<ul className="flex flex-col gap-2 text-slate-700 dark:text-neutral-300">
 								<li>
 									<a href="#" className="hover:underline">
 										Community
@@ -79,8 +79,8 @@ export const Footer = () => {
 							</ul>
 						</div>
 						<div className="col-span-full md:col-span-2 lg:col-span-1">
-							<p className="mb-2 font-semibold text-slate-600 dark:text-neutral-200">Legal</p>
-							<ul className="flex flex-col gap-1 text-slate-700 dark:text-neutral-300">
+							<p className="mb-2 font-semibold text-black">Legal</p>
+							<ul className="flex flex-col gap-2 text-slate-700 dark:text-neutral-300">
 								<li>
 									<a href="#" className="hover:underline">
 										Pricing
@@ -104,8 +104,8 @@ export const Footer = () => {
 							</ul>
 						</div>
 						<div className="col-span-1">
-							<p className="mb-2 font-semibold text-slate-600 dark:text-neutral-200">Pages</p>
-							<ul className="flex flex-col gap-1 text-slate-700 dark:text-neutral-300">
+							<p className="mb-2 font-semibold text-black">Pages</p>
+							<ul className="flex flex-col gap-2 text-slate-700 dark:text-neutral-300">
 								<li>
 									<a href="#" className="hover:underline">
 										Events
