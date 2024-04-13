@@ -88,7 +88,7 @@ export function Header() {
 			)}
 		  </IconButton>
 		</div> */}
-		<Collapse open={open}>
+		{/* <Collapse open={open}>
 		  <div className="container mx-auto mt-4 rounded-lg bg-white px-6 py-5">
 			<ul className="flex flex-col gap-4 text-gray-900 text-lg">
 			  <li>
@@ -101,7 +101,7 @@ export function Header() {
 				  About
 				</Link>
 			  </li>
-			 {/* <Custom /> */}
+			 <Custom />
 			  <li>
 				<Link  href="/main/contacts">
 				  Contacts
@@ -120,7 +120,8 @@ export function Header() {
 			  </IconButton>
 			</div>
 		  </div>
-		</Collapse>
+		</Collapse> */}
+		Navbar
 	  </Navbar>
 	);
   }
