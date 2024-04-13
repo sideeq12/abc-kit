@@ -34,7 +34,7 @@ export const Footer = () => {
 	const PUBLICATION_LOGO = publication.preferences.logo;
 	return (
 		<footer className="border-t py-20 bg-[#D3BE61] ">
-			<Container className="px-10">
+			{/* <Container className="px-10">
 				<div className="flex flex-col md:flex-row px-4 md:px-20 border-b border-black pb-6 md:pb-12">
 			<div>
 			<Image
@@ -67,7 +67,8 @@ export const Footer = () => {
 					</div>
 				</div>
 				<div className='mt-6 md:mt-12  mx-auto flex justify-between'>All rights reserved.  <div>Copyright @ 2024 ABC Foundation</div></div>
-			</Container>
+			</Container> */}
+			test
 		</footer>
 	);
 };
