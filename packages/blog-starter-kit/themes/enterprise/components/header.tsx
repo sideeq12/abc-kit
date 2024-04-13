@@ -45,12 +45,12 @@ export function Header() {
 		className="absolute z-50 border-0 bg-white text-black w-screen"
 	  >
 		<div className="container ml-6 md:sml-14 flex items-center justify-between">
-		  <Image
+		  {/* <Image
 			src="https://github.com/adminadbc/abcwebsite/blob/main/public/logoabc.png?raw=true"
 			width={250}
 			height={80}
 			alt="ABC Foundation Logo"
-		  />
+		  /> */}
 		  <div className="ml-auto hidden items-center gap-14 lg:flex text-2xl">
 			{links.map((link) => ( (link.name == "Resources" ) ?
 			//  <Custom   key={30}/> 
