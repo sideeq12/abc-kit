@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import { Container } from './container';
 import { useAppContext } from './contexts/appContext';
-import { SocialLinks } from './social-links';
-import { FaSquareInstagram } from "react-icons/fa6";
+import { FaSquareInstagram, FaSquareFacebook, FaSquareTwitter,  FaSquareXTwitter} from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
+import { RiTiktokLine } from "react-icons/ri";
+
 
 
 const links = [
@@ -48,8 +50,12 @@ export const Footer = () => {
 					</p>
 				)}
 				<div className="flex px-20 border-b border-black pb-6 md:pb-12">
-					<div>
+					<div className='flex gap-3'>
 						<FaSquareInstagram size={30} />
+						<FaSquareFacebook size={30} />
+						<FaLinkedin size={30} />
+						<FaSquareXTwitter size={30} />
+						<RiTiktokLine size={30}/>
 					</div>
 					<div className="flex ml-auto flex-wrap gap-6 md:gap-12">
 						{links.map((link, index )=><div className="col-span-full md:col-span-2 lg:col-span-1" key={index}>
