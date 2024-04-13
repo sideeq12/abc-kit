@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from './container';
 import { useAppContext } from './contexts/appContext';
 import { FaSquareInstagram, FaSquareFacebook, FaSquareTwitter,  FaSquareXTwitter} from "react-icons/fa6";
@@ -34,29 +35,22 @@ export const Footer = () => {
 	return (
 		<footer className="border-t py-20 bg-[#D3BE61] ">
 			<Container className="px-5">
-				{PUBLICATION_LOGO ? (
-					<div className="mb-20 flex w-full flex-row justify-center">
-						<Link
-							href={'/'}
-							aria-label={`${publication.title} home page`}
-							className="flex flex-row items-center gap-5"
-						>
-							<img className="block w-40" src={PUBLICATION_LOGO} alt={publication.title} />
-						</Link>
-					</div>
-				) : (
-					<p className="mb-20 text-center text-xl font-semibold text-slate-900 dark:text-slate-50 md:text-4xl">
-						{publication.title}
-					</p>
-				)}
 				<div className="flex flex-col md:flex-row px-4 md:px-20 border-b border-black pb-6 md:pb-12">
-					<div className='flex gap-3'>
+			<div>
+			<Image
+			src="https://github.com/adminadbc/abcwebsite/blob/main/public/logoabc.png?raw=true"
+			width={250}
+			height={80}
+			alt="ABC Foundation Logo"
+		  />
+					<div className='flex gap-3 mt-4 md:mt-8'>
 						<FaSquareInstagram size={30} />
 						<FaSquareFacebook size={30} />
 						<FaLinkedin size={30} />
 						<FaSquareXTwitter size={30} />
 						<RiTiktokLine size={30}/>
 					</div>
+			</div>
 					<div className="flex ml-auto flex-wrap gap-6 md:gap-12">
 						{links.map((link, index )=><div className="col-span-full md:col-span-2 lg:col-span-1" key={index}>
 							<p className="mb-2 font-semibold text-black text-xl">
