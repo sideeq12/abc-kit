@@ -26,6 +26,7 @@ const links = [
 
 export function Header() {
 	const [open, setOpen] = React.useState(false);
+	const[show, setShow ] = React.useState(false)
 	const handleOpen = () => setOpen((cur) => !cur);
   
 	const pathname = usePathname();
@@ -38,22 +39,32 @@ export function Header() {
 	}, []);
   
 	return (
-		<div className='w-screen flex px-4 md:px-20 justify-between py-4 align-middle'>
+		<div className='w-screen relative flex flex-col md:flex-row px-4 md:px-20 justify-between py-4 align-middle'>
 		<Image
 			src="https://github.com/adminadbc/abcwebsite/blob/main/public/logoabc.png?raw=true"
 			width={250}
 			height={80}
 			alt="ABC Foundation Logo"
 		  />
-		  <div className=''>
-			<ul className='flex ml-auto gap-6 mt-4 w-full'>
+		  { open ? <div className=''>
+			<ul className='flex flex-row w-screen ml-auto  pt-8 h-fit pl-0  gap-6 mt-4 lg:w-full'>
 			{links.map((link, idx) =><div  key={idx}>
 				{link.name !== "Resources" ? <li>
-				<Link href={link.href} >{link.name}</Link>
+				<Link href={link.href} className=' text-3xl md:text-base'>{link.name}</Link>
 			</li> : <Custom />}
 			</div>)}
 			</ul>
-		  </div>
+		  </div> : (show && <div className=''>
+			<ul className='flex flex-col w-screen ml-auto gap-6 pl-8 pt-8 h-screen mt-4'>
+			{links.map((link, idx) =><div  key={idx}>
+				{link.name !== "Resources" ? <li>
+				<Link href={link.href} className=' text-3xl md:text-base'>{link.name}</Link>
+			</li> : <Custom />}
+			</div>)}
+			</ul>
+		  </div>  )}
+			{show && <XMarkIcon className='absolute top-10 right-4 h-8'   onClick={()=>{setShow(false)}}/>}
+		  {show ? null : <Bars3Icon className='absolute top-10 right-4 h-8'   onClick={()=>{setShow(true)}}/>}
 		</div>
 	);
   }
@@ -69,10 +80,10 @@ interface DropMenuProps {
   
   const DropMenu: React.FC<DropMenuProps & { isOpen: boolean; toggleDropdown: () => void }> = ({ title, items, isOpen, toggleDropdown }) => {
 	return (
-	  <div className="relative flex flex-col md:flex-row text-left -mt-2">
+	  <div className="relative flex flex-col md:flex-row text-left text-3xl md:text-base -mt-2">
 		<div
 		  onClick={toggleDropdown}
-		  className="inline-flex justify-start w-full md:justify-center md:px-4 py-2 bg-white  font-medium"
+		  className="inline-flex justify-start w-full md:justify-center md:px-4 py-4 bg-white  font-medium"
 		  aria-haspopup="true"
 		  aria-expanded={isOpen}
 		>
