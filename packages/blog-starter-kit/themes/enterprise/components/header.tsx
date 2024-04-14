@@ -47,7 +47,7 @@ export function Header() {
 		  />
 		  <div>
 			<ul className='flex ml-auto gap-4'>
-			{links.map(link =><li>
+			{links.map((link, idx) =><li key={idx}>
 				{link.name}
 			</li>)}
 			</ul>
