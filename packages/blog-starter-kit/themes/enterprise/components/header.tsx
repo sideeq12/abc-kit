@@ -86,7 +86,7 @@ interface DropMenuProps {
   
   const DropMenu: React.FC<DropMenuProps & { isOpen: boolean; toggleDropdown: () => void }> = ({ title, items, isOpen, toggleDropdown }) => {
 	return (
-	  <div className="relative flex flex-col md:flex-row text-left text-3xl md:text-base ">
+	  <div className="relative flex flex-col md:flex-row text-left text-3xl md:text-base -mt-2">
 		<div
 		  onClick={toggleDropdown}
 		  className="inline-flex justify-start w-full md:justify-center md:px-4 py-4 bg-white  font-medium"
