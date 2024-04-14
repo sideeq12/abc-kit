@@ -26,16 +26,22 @@ const links = [
 
 export function Header() {
 	const [open, setOpen] = React.useState(false);
+	// open to show  mobile view
 	const[show, setShow ] = React.useState(false)
 	const handleOpen = () => setOpen((cur) => !cur);
-  
+
 	const pathname = usePathname();
+
   
 	React.useEffect(() => {
 	  window.addEventListener(
 		"resize",
-		() => window.innerWidth >= 960 && setOpen(false)
+		() =>  window.innerWidth >=960 ?
+			setOpen(false) :
+			setOpen(true)
+			// (window.innerWidth >= 960 && setOpen(false))
 	  );
+	
 	}, []);
   
 	return (
@@ -46,15 +52,15 @@ export function Header() {
 			height={80}
 			alt="ABC Foundation Logo"
 		  />
-		  { open ? <div className=''>
-			<ul className='flex flex-row w-screen ml-auto  pt-8 h-fit pl-0  gap-6 mt-4 lg:w-full'>
+		  <div className='hidden md:block'>
+			<ul className='flex flex-row w-full  ml-auto  pt-8 h-fit pl-0  gap-6 mt-4 lg:w-full'>
 			{links.map((link, idx) =><div  key={idx}>
 				{link.name !== "Resources" ? <li>
 				<Link href={link.href} className=' text-3xl md:text-base'>{link.name}</Link>
 			</li> : <Custom />}
 			</div>)}
 			</ul>
-		  </div> : (show && <div className=''>
+		  </div>  <div className={`${show ? "block" : "hidden"} md:hidden`}>
 			<ul className='flex flex-col w-screen ml-auto gap-6 pl-8 pt-8 h-screen mt-4'>
 			{links.map((link, idx) =><div  key={idx}>
 				{link.name !== "Resources" ? <li>
@@ -62,9 +68,9 @@ export function Header() {
 			</li> : <Custom />}
 			</div>)}
 			</ul>
-		  </div>  )}
-			{show && <XMarkIcon className='absolute top-10 right-4 h-8'   onClick={()=>{setShow(false)}}/>}
-		  {show ? null : <Bars3Icon className='absolute top-10 right-4 h-8'   onClick={()=>{setShow(true)}}/>}
+		  </div>  
+			{show  && <XMarkIcon className='absolute top-10 right-4 h-8 md:hidden'   onClick={()=>{setShow(false)}}/>}
+		  {!show && <Bars3Icon className='absolute top-10 right-4 h-8 md:hidden'   onClick={()=>{setShow(true)}}/>}
 		</div>
 	);
   }
@@ -80,7 +86,7 @@ interface DropMenuProps {
   
   const DropMenu: React.FC<DropMenuProps & { isOpen: boolean; toggleDropdown: () => void }> = ({ title, items, isOpen, toggleDropdown }) => {
 	return (
-	  <div className="relative flex flex-col md:flex-row text-left text-3xl md:text-base -mt-2">
+	  <div className="relative flex flex-col md:flex-row text-left text-3xl md:text-base ">
 		<div
 		  onClick={toggleDropdown}
 		  className="inline-flex justify-start w-full md:justify-center md:px-4 py-4 bg-white  font-medium"
