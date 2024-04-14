@@ -49,7 +49,7 @@ export function Header() {
 			<ul className='flex ml-auto gap-6 mt-4 w-full'>
 			{links.map((link, idx) =><div>
 				{link.name !== "Resources" ? <li key={idx}>
-				{link.name}
+				<Link href={link.href}  key={idx}>{link.name}</Link>
 			</li> : <Custom />}
 			</div>)}
 			</ul>
